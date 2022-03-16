@@ -17,10 +17,19 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
 
 
+  build_artifact:
+    runs-on: ubuntu-latest
+    needs: build_and_test
+
+    steps:
+      - name: Build artifact
+        run:  mvn clean package -DskipTests
+
 
   deploy:
     runs-on: ubuntu-latest
-    needs: build_and_test
+    needs: [build_and_test, build_artifact]
+
 
     steps:
       - name: Checkout the files
