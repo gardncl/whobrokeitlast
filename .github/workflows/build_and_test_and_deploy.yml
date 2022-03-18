@@ -2,6 +2,10 @@ name: Java CI
 
 on: [push]
 
+defaults:
+  run:
+    working-directory: application
+
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
