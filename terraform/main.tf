@@ -30,4 +30,5 @@ module "vpc" {
   source = "./modules/vpc"
   vpc_name = "wbil_vpc"
   public_subnets = "10.0.0.0/19"
+  private_subnets = "10.0.32.0/19"
 }
