@@ -28,10 +28,5 @@ module "bootstrap" {
 
 module "vpc" {
   source = "./modules/vpc"
-  vpc_name = ""
-  nat_name = "wbil_nat"
-  ami_id = "ami-0c02fb55956c7d316"
-  security_group_ingress_cidr_ipv4 = "0.0.0.0/0"
-  ssh_key_name = ""
-  subnet_id = ""
+  vpc_name = "wbil_vpc"
 }
