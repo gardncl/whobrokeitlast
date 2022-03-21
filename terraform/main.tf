@@ -1,4 +1,3 @@
-# Require TF version to be same as or greater than 0.12.13
 terraform {
   required_providers {
     aws = {
@@ -21,9 +20,18 @@ provider "aws" {
   region = "us-east-1"
 }
 
-# Call the seed_module to build our ADO seed info
 module "bootstrap" {
   source                      = "./modules/bootstrap"
   name_of_s3_bucket	      = "wbil-tf-bucket"
   dynamo_db_table_name        = "aws-locks"
+}
+
+module "vpc" {
+  source = "./modules/vpc"
+  vpc_name = ""
+  nat_name = "wbil_nat"
+  ami_id = "ami-0c02fb55956c7d316"
+  security_group_ingress_cidr_ipv4 = "0.0.0.0/0"
+  ssh_key_name = ""
+  subnet_id = ""
 }
