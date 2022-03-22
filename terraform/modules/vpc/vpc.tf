@@ -79,7 +79,7 @@ resource "aws_route_table" "private_route_table" {
 
   # https://stackoverflow.com/questions/69760888/terraform-inappropriate-value-for-attribute-route
   route {
-      cidr_block = "0.0.0.0/0",
+      cidr_block = "0.0.0.0/0"
       network_interface_id = aws_network_interface.network_interface.id
   }
 }
