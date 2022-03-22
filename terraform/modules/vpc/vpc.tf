@@ -67,7 +67,6 @@ sudo /etc/network/if-pre-up.d/nat-setup
 resource "aws_network_interface" "network_interface" {
   subnet_id = "subnet-0984e777fbfed60d7"
   source_dest_check = false
-  security_groups = [aws_vpc.vpc.id]
 
   tags = {
     Name = "${var.nat_instance_name}_network_interface"
