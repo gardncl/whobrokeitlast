@@ -72,3 +72,15 @@ resource "aws_network_interface" "network_interface" {
     Name = "${var.nat_instance_name}_network_interface"
   }
 }
+
+resource "aws_route_table" "private_route_table" {
+  # Creating RT for Private Subnet
+  vpc_id = aws_vpc.vpc.id
+
+  route = [
+    {
+      cidr_block = "0.0.0.0/0",
+      network_interface_id = aws_network_interface.network_interface.id
+    }
+  ]
+}
