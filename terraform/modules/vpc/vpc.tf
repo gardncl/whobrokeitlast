@@ -78,7 +78,7 @@ resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.vpc.id
 
   # https://stackoverflow.com/questions/69760888/terraform-inappropriate-value-for-attribute-route
-  route = {
+  route {
       cidr_block = "0.0.0.0/0",
       network_interface_id = aws_network_interface.network_interface.id
   }
