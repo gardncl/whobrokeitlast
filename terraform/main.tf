@@ -32,7 +32,7 @@ module "vpc" {
   public_subnets = "10.0.0.0/19"
   private_subnets = "10.0.32.0/19"
   nat_ami_id = "ami-0c02fb55956c7d316" // Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type
-  nat_ssh_key_name = "whobrokeitlast.pem"
+  nat_ssh_key_name = "whobrokeitlast"
   nat_instance_name = "wbil_nat_instance"
 }
 
