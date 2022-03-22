@@ -23,3 +23,18 @@ variable "cidr_blocks" {
     }
   )
 }
+
+variable "nat_ami_id" {
+  description = "Type of machine running the NAT instance"
+  type = string
+}
+
+variable "nat_ssh_key_name" {
+  description = "NAT instance ssh key name"
+  type = string
+}
+
+variable "nat_instance_name" {
+  description = "nat_instance_name"
+  type = string
+}
