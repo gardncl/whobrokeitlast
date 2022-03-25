@@ -65,7 +65,7 @@ sudo /etc/network/if-pre-up.d/nat-setup
 }
 
 resource "aws_network_interface" "network_interface" {
-  subnet_id = "subnet-0984e777fbfed60d7"
+  subnet_id = aws_subnet.publicsubnets.id
   source_dest_check = false
 
   tags = {
